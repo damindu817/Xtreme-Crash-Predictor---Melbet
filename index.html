@@ -568,17 +568,17 @@
     // Signals data with start time (minutes:seconds), end time (or null), and odds
     const signals = [
       { start: "00:00", end: "01:00", odd: "4× | 5×" },
-      { start: "05:00", end: "06:00", odd: "5×" },
+      { start: "05:00", end: "06:00", odd: "4× | 5×" },
       { start: "10:00", end: "11:00", odd: "4× | 5×" },
       { start: "15:00", end: "16:00", odd: "4× | 5×" },
-      { start: "20:00", end: "21:00", odd: "5× | 6×" },
-      { start: "25:00", end: "26:00", odd: "4× | 5× | 6×" },
+      { start: "20:00", end: "21:00", odd: "4× | 5×" },
+      { start: "25:00", end: "26:00", odd: "4× | 5×" },
       { start: "30:00", end: "31:00", odd: "4× | 5×" },
       { start: "35:00", end: "36:00", odd: "4× | 5×" },
-      { start: "40:00", end: "41:00", odd: "5×" },
+      { start: "40:00", end: "41:00", odd: "4× | 5×" },
       { start: "45:00", end: "46:00", odd: "4× | 5×" },
       { start: "50:00", end: "51:00", odd: "4× | 5×" },
-      { start: "55:00", end: "56:00", odd: "5×" },
+      { start: "55:00", end: "56:00", odd: "4× | 5×" }
     ];
 
     // Generate timeline for current hour
@@ -596,7 +596,7 @@
         
         // Parse end time (use start time + 1 minute if end is null)
         const endStr = signal.end || signal.start;
-        const [endMn, endSec] = endStr.split(":").map(Number);
+        const [endMin, endSec] = endStr.split(":").map(Number);
         endTime.setHours(currentHour, endMin, endSec, 0);
         
         // If end is null, add 1 minute to end time
