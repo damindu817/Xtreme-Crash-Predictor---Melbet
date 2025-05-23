@@ -171,13 +171,6 @@
       z-index: 1;
     }
     
-    .odd-display::before {
-      content: '';
-      position: absolute;
-      left: 15px;
-      font-size: 1.2rem;
-    }
-    
     .odd-display::after {
       content: '';
       position: absolute;
@@ -200,8 +193,6 @@
       width: 100%;
       max-width: 320px;
       margin: 0 auto;
-      position: relative;
-      overflow: hidden;
     }
     
     .buttons {
@@ -218,15 +209,18 @@
       border-radius: 12px;
       font-weight: 600;
       border: 2px solid white;
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
+      transition: all 0.2s ease-out;
       text-align: center;
       text-transform: uppercase;
       font-size: 0.9rem;
       letter-spacing: 0.5px;
       width: 100%;
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
     }
     
     .buttons a::after {
@@ -239,12 +233,13 @@
       background: linear-gradient(
         to bottom right,
         rgba(255,255,255,0) 0%,
-        rgba(255,255,255,0.4) 50%,
+        rgba(255,255,255,0.3) 50%,
         rgba(255,255,255,0) 100%
       );
       transform: rotate(30deg);
       animation: shine 3s infinite;
       opacity: 0;
+      z-index: 1;
     }
     
     .buttons a.whatsapp {
@@ -256,12 +251,12 @@
     }
     
     .buttons a:hover { 
-      transform: translateY(-3px);
+      transform: translateY(-3px) translateZ(0);
       box-shadow: 0 7px 20px rgba(0,0,0,0.3);
     }
     
     .buttons a:active {
-      transform: translateY(1px);
+      transform: translateY(1px) translateZ(0);
     }
     
     footer {
@@ -279,7 +274,7 @@
         opacity: 0;
       }
       20% {
-        opacity: 1;
+        opacity: 0.5;
       }
       100% {
         transform: rotate(30deg) translate(100%, 100%);
