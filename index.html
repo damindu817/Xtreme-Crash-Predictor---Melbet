@@ -721,7 +721,7 @@
       }
       else if (currentState === 'loading') {
         if (now.getTime() - loadingStart < LOADING_DURATION) {
-          oddEl.innerHTML = 'Analyzing crash patterns...';
+          oddEl.innerHTML = 'Calculating optimal odds...';
         } else {
           currentState = 'waiting';
           loadingStart = null;
