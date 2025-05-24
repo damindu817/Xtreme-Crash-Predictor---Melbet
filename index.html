@@ -400,6 +400,130 @@
         opacity: 0.8;
       }
     }
+
+    /* Notification Popup Styles */
+    .notification-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.85);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 15px;
+    }
+
+    .notification-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .notification-box {
+      background: linear-gradient(135deg, rgba(30,30,30,0.95) 0%, rgba(20,20,20,0.95) 100%);
+      border-radius: 16px;
+      padding: 22px;
+      width: 100%;
+      max-width: 340px;
+      box-shadow: 0 0 25px rgba(248, 168, 0, 0.4);
+      transform: scale(0.9);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      border: 2px solid rgba(248, 168, 0, 0.4);
+      overflow: hidden;
+    }
+
+    .notification-overlay.active .notification-box {
+      transform: scale(1);
+    }
+
+    /* Shine effect animation */
+    .notification-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(248, 168, 0, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      animation: shine 3s infinite;
+      z-index: 1;
+    }
+
+    .notification-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(248, 168, 0, 0.1);
+      border: 2px solid rgba(248, 168, 0, 0.4);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #f9d423;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 2;
+    }
+
+    .notification-close:hover {
+      background: rgba(248, 168, 0, 0.2);
+      transform: rotate(90deg) scale(1.1);
+    }
+
+    .notification-content {
+      text-align: center;
+      padding: 5px;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: #f0f0f0;
+      letter-spacing: 0.2px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .notification-content h3 {
+      color: #f9d423;
+      margin-bottom: 18px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .notification-content h3::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #f9d423, #f83600);
+      border-radius: 2px;
+    }
+
+    .notification-content p {
+      margin-bottom: 16px;
+    }
+
+    .team-signature {
+      color: #f83600;
+      margin-top: 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
     
     @media (max-width: 480px) {
       header {
@@ -419,6 +543,14 @@
       
       .buttons a {
         padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+      }
+
+      .notification-box {
+        padding: 18px;
+      }
+
+      .notification-content {
         font-size: 0.85rem;
       }
     }
@@ -457,6 +589,22 @@
     </div>
     
     <footer>POWERED BY XTREME PREDICTOR</footer>
+  </div>
+
+  <!-- Notification Popup -->
+  <div class="notification-overlay" id="notificationOverlay">
+    <div class="notification-box">
+      <button class="notification-close" id="notificationClose">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="notification-content">
+        <h3>උපදෙස් එකතුවක්</h3>
+        <p>මෙම ක්‍රෑෂ් ක්‍රීඩාව සඳහා ඔබට ලබාදෙන සංඥා වලට අනුව ක්‍රීඩා කිරීමේදී, එකම මුදලක් භාවිතා කිරීම සුදුසුම ක්‍රමය වේ.</p>
+        <p>"මාර්ටින් ගේල් (Martingale)" ක්‍රමය හෝ ඊට සමාන ගණනාවර්ධන ක්‍රමවේදයන් භාවිතයෙන් ක්‍රීඩා කිරීමෙන් ඔබගේ මුදල් කළමනාකරණය පාලනයෙන් පිට විය හැකි අතර, මෙම ක්‍රමය ක්‍රීඩාවේ ඇල්ගොරිතමය එය හඳුනාගෙන ඔබ මුදල් ගුණ කරන ආකාරය අනුව ක්‍රීඩාව ඔබට ජය ලබාදීම වළක්වනු ඇත.</p>
+        <p>ඒ වෙනුවට, එකම මුදලක් යොදා ලබාදෙන සංඥාවට අනුව ක්‍රීඩා කිරීම සුදුසුයි.</p>
+        <div class="team-signature">- Xtreme Predictor Team -</div>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -703,6 +851,29 @@
       }
     }
 
+    // Show notification after 5 seconds with animation
+    setTimeout(function() {
+      const overlay = document.getElementById('notificationOverlay');
+      overlay.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+      overlay.classList.add('active');
+    }, 5000);
+
+    // Close button functionality
+    document.getElementById('notificationClose').addEventListener('click', function() {
+      const btn = this;
+      const overlay = document.getElementById('notificationOverlay');
+      
+      btn.style.transform = 'rotate(90deg) scale(1.1)';
+      btn.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+      
+      overlay.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+      overlay.classList.remove('active');
+      
+      setTimeout(() => {
+        btn.style.transform = 'rotate(0) scale(1)';
+      }, 300);
+    });
+
     document.addEventListener('click', () => {
       initAudio();
     }, { once: true });
@@ -713,5 +884,6 @@
     updateDisplay();
     setInterval(updateDisplay, 100);
   </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </body>
 </html>
