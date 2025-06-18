@@ -2,91 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>XTREME CRASH PREDICTOR : MELBET</title>
   <style>
-    :root {
-      --primary-gradient: linear-gradient(135deg, #FF6B00 0%, #F9D423 100%);
-      --secondary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --success-gradient: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
-      --warning-gradient: linear-gradient(135deg, #f83600 0%, #f9d423 100%);
-      --whatsapp-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-      --telegram-gradient: linear-gradient(135deg, #0088cc 0%, #00aced 100%);
-      --dark-bg: #121212;
-      --darker-bg: #0a0a0a;
-      --card-bg: rgba(30, 30, 30, 0.8);
-      --text-light: rgba(255, 255, 255, 0.95);
-      --text-muted: rgba(255, 255, 255, 0.6);
-      --border-radius: 16px;
-      --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    }
-    
     * { 
       margin: 0; 
       padding: 0; 
       box-sizing: border-box; 
       user-select: none; 
-      -webkit-tap-highlight-color: transparent;
-      -webkit-font-smoothing: antialiased;
+      font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
     
     html, body {
       min-height: 100vh;
-      background: var(--dark-bg);
-      color: var(--text-light);
+      background: #121212;
+      color: #fff;
       overflow-x: hidden;
-      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
     }
     
     body {
-      background: radial-gradient(ellipse at center, #1a1a1a 0%, #0d0d0d 100%);
-      display: flex;
-      flex-direction: column;
-      touch-action: manipulation;
+      background: radial-gradient(circle at center, #1a1a1a 0%, #121212 100%);
     }
     
     .content { 
       display: flex; 
       flex-direction: column; 
       align-items: center; 
-      padding: 20px 15px;
+      padding: 30px 15px 20px;
       max-width: 500px;
       margin: 0 auto;
-      width: 100%;
-      position: relative;
-      z-index: 1;
-    }
-    
-    /* Premium Header */
-    .premium-badge {
-      position: absolute;
-      top: -5px;
-      right: 20px;
-      background: var(--primary-gradient);
-      color: white;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
-      z-index: 2;
-      transform: translateY(-50%);
-      animation: float 3s ease-in-out infinite;
     }
     
     header {
       text-align: center;
-      padding: 1.2rem 1.5rem;
-      font-size: 1.4rem;
-      font-weight: 800;
-      background: var(--primary-gradient);
-      box-shadow: 0 8px 30px rgba(255, 107, 0, 0.3);
-      border-radius: var(--border-radius);
-      margin: 1.5rem 0 1.8rem;
+      padding: 1rem 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #f9d423 0%, #f83600 100%);
+      box-shadow: 0 4px 20px rgba(248, 168, 0, 0.3);
+      border-radius: 12px;
+      margin: 1rem 0 1.5rem;
       border: none;
       position: relative;
       overflow: hidden;
@@ -95,78 +52,10 @@
       letter-spacing: 1px;
       color: white;
       z-index: 1;
-      border: 2px solid rgba(255, 255, 255, 0.15);
+      border: 2px solid white;
     }
     
     header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(
-        45deg,
-        rgba(255,255,255,0) 0%,
-        rgba(255,255,255,0.1) 50%,
-        rgba(255,255,255,0) 100%
-      );
-      animation: shine 6s infinite;
-      opacity: 0.5;
-    }
-    
-    /* Live Time Display */
-    #liveTime {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 0 auto 1.8rem;
-      font-size: 0.9rem;
-      color: var(--text-light);
-      background: rgba(255,255,255,0.08);
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      border: 1px solid rgba(255,255,255,0.08);
-      font-weight: 600;
-      width: 100%;
-      max-width: 350px;
-      backdrop-filter: blur(5px);
-    }
-    
-    #liveTime span {
-      font-weight: 700;
-      color: #f9d423;
-    }
-    
-    /* Signal Box - Premium Design */
-    .signal-container {
-      position: relative;
-      width: 100%;
-      max-width: 300px;
-      margin: 1rem auto 2rem;
-      perspective: 1000px;
-    }
-    
-    .signal-box {
-      width: 100%;
-      aspect-ratio: 1/1;
-      border-radius: 50%;
-      background: var(--card-bg);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border: 2px solid rgba(255, 255, 255, 0.1);
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(8px);
-      box-shadow: var(--box-shadow);
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      transform-style: preserve-3d;
-    }
-    
-    .signal-box::before {
       content: '';
       position: absolute;
       top: -50%;
@@ -176,39 +65,76 @@
       background: linear-gradient(
         to bottom right,
         rgba(255,255,255,0) 0%,
-        rgba(255,255,255,0.1) 50%,
+        rgba(255,255,255,0.4) 50%,
         rgba(255,255,255,0) 100%
       );
       transform: rotate(30deg);
-      animation: shine 6s infinite;
-      opacity: 0.3;
+      animation: shine 3s infinite;
+      opacity: 0;
+    }
+    
+    #liveTime {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0.5rem auto 1.5rem;
+      font-size: 0.95rem;
+      color: #fff;
+      background: rgba(255,255,255,0.1);
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      border: 1px solid rgba(255,255,255,0.1);
+      font-weight: 500;
+      width: 100%;
+      max-width: 350px;
+      justify-content: space-between;
+    }
+    
+    .signal-box {
+      margin: 1rem auto;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(30,30,30,0.7);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid white;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
     }
     
     .signal-box.loading {
-      animation: pulseGlow 2s infinite alternate;
-      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 30px rgba(248, 168, 0, 0.4),
+                  0 0 60px rgba(248, 168, 0, 0.2);
+      animation: pulse 2s infinite;
+      border-color: white;
     }
     
     .signal-box.waiting {
-      border-color: rgba(248, 168, 0, 0.5);
-      box-shadow: 0 0 30px rgba(248, 168, 0, 0.2),
-                  0 0 60px rgba(248, 168, 0, 0.1);
+      box-shadow: 0 0 30px rgba(248, 54, 0, 0.4),
+                  0 0 60px rgba(248, 54, 0, 0.2);
+      border-color: white;
     }
     
     .signal-box.active {
-      border-color: rgba(0, 200, 83, 0.5);
-      box-shadow: 0 0 30px rgba(0, 200, 83, 0.2),
-                  0 0 60px rgba(0, 200, 83, 0.1);
-      animation: activePulse 2s infinite;
+      box-shadow: 0 0 30px rgba(0, 200, 83, 0.4),
+                  0 0 60px rgba(0, 200, 83, 0.2);
+      border-color: white;
     }
     
     .signal-content {
       text-align: center;
-      color: var(--text-light);
+      color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       padding: 0 1.5rem;
       width: 100%;
       z-index: 2;
@@ -217,107 +143,56 @@
     .signal-time {
       font-weight: 700;
       margin-bottom: 0.8rem;
-      font-size: 1.3rem;
-      color: #fff;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-      background: linear-gradient(to right, #f9d423, #f83600);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    
-    .countdown-timer {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      margin-top: 0.5rem;
-    }
-    
-    /* Premium Loading Animation */
-    .loading-container {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-    
-    .loading-title {
-      font-weight: 800;
       font-size: 1.4rem;
       color: #fff;
-      text-align: center;
-      line-height: 1.3;
-      margin-bottom: 15px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-      background: linear-gradient(to right, #f9d423, #f83600);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
     
-    .loading-text {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      text-align: center;
-      line-height: 1.4;
-      position: relative;
-      font-weight: 500;
-    }
-    
-    .loading-dots::after {
-      content: '.';
-      animation: dots 1.5s infinite;
-    }
-    
-    /* Premium Odds Display */
     .odd-display {
       text-align: center;
       margin: 1.5rem auto;
       font-size: 1.4rem;
       color: white;
-      background: var(--warning-gradient);
-      padding: 1rem 1.6rem;
+      background: linear-gradient(135deg, #f9d423 0%, #f83600 100%);
+      padding: 0.8rem 1.6rem;
       border-radius: 50px;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 25px rgba(248, 54, 0, 0.3);
+      border: 2px solid white;
+      box-shadow: none;
       position: relative;
       overflow: hidden;
       width: 100%;
       max-width: 320px;
       white-space: nowrap;
-      min-height: 65px;
+      min-height: 60px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 800;
+      font-weight: 700;
       z-index: 1;
-      transition: all 0.3s ease;
     }
     
-    .odd-display::before {
+    .odd-display::after {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
       background: linear-gradient(
-        45deg,
+        to bottom right,
         rgba(255,255,255,0) 0%,
-        rgba(255,255,255,0.1) 50%,
+        rgba(255,255,255,0.4) 50%,
         rgba(255,255,255,0) 100%
       );
-      animation: shine 6s infinite;
-      opacity: 0.5;
+      transform: rotate(30deg);
+      animation: shine 3s infinite;
+      opacity: 0;
     }
     
-    /* Buttons - Premium Style */
     .buttons-container {
       width: 100%;
       max-width: 320px;
-      margin: 0 auto 1.5rem;
+      margin: 0 auto;
     }
     
     .buttons {
@@ -330,15 +205,15 @@
     .buttons a {
       text-decoration: none;
       color: white;
-      padding: 1rem 1.5rem;
+      padding: 0.8rem 1.5rem;
       border-radius: 12px;
-      font-weight: 700;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      font-weight: 600;
+      border: 2px solid white;
+      transition: all 0.2s ease-out;
       text-align: center;
       text-transform: uppercase;
-      font-size: 0.95rem;
-      letter-spacing: 1px;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
       width: 100%;
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
       position: relative;
@@ -346,107 +221,131 @@
       transform: translateZ(0);
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
     }
     
-    .buttons a::before {
+    .buttons a::after {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
       background: linear-gradient(
-        45deg,
+        to bottom right,
         rgba(255,255,255,0) 0%,
-        rgba(255,255,255,0.1) 50%,
+        rgba(255,255,255,0.3) 50%,
         rgba(255,255,255,0) 100%
       );
-      animation: shine 6s infinite;
-      opacity: 0.3;
-    }
-    
-    .buttons a i {
-      font-size: 1.2rem;
+      transform: rotate(30deg);
+      animation: shine 3s infinite;
+      opacity: 0;
+      z-index: 1;
     }
     
     .buttons a.whatsapp {
-      background: var(--whatsapp-gradient);
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
     }
     
     .buttons a.telegram {
-      background: var(--telegram-gradient);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     }
     
     .buttons a:hover { 
       transform: translateY(-3px) translateZ(0);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      box-shadow: 0 7px 20px rgba(0,0,0,0.3);
     }
     
     .buttons a:active {
       transform: translateY(1px) translateZ(0);
     }
     
-    /* Premium Footer */
     footer {
       text-align: center;
       font-size: 0.8rem;
       padding: 1rem;
       margin-top: 1rem;
-      color: var(--text-muted);
+      color: rgba(255,255,255,0.6);
       font-weight: 500;
-      position: relative;
     }
     
-    footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    }
-    
-    /* Premium Animations */
     @keyframes shine {
       0% {
-        transform: translateX(-100%) rotate(45deg);
+        transform: rotate(30deg) translate(-30%, -30%);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.5;
       }
       100% {
-        transform: translateX(100%) rotate(45deg);
+        transform: rotate(30deg) translate(100%, 100%);
+        opacity: 0;
       }
     }
     
-    @keyframes pulseGlow {
-      0% { 
-        box-shadow: 0 0 15px rgba(248, 168, 0, 0.3); 
+    .shine-effect {
+      animation: quickShine 1.5s ease-out;
+    }
+    
+    @keyframes quickShine {
+      0% {
+        box-shadow: 0 0 5px rgba(255,255,255,0);
       }
-      50% { 
-        box-shadow: 0 0 30px rgba(248, 168, 0, 0.5); 
+      50% {
+        box-shadow: 0 0 30px rgba(248, 168, 0, 0.8);
       }
-      100% { 
-        box-shadow: 0 0 15px rgba(248, 168, 0, 0.3); 
+      100% {
+        box-shadow: 0 0 5px rgba(255,255,255,0);
       }
     }
     
-    @keyframes activePulse {
+    @keyframes pulse {
       0% { 
-        transform: scale(1);
-        box-shadow: 0 0 20px rgba(0, 200, 83, 0.3); 
+        box-shadow: 0 0 15px rgba(248, 168, 0, 0.4); 
       }
       50% { 
-        transform: scale(1.01);
-        box-shadow: 0 0 40px rgba(0, 200, 83, 0.4); 
+        box-shadow: 0 0 30px rgba(248, 168, 0, 0.6); 
       }
       100% { 
-        transform: scale(1);
-        box-shadow: 0 0 20px rgba(0, 200, 83, 0.3); 
+        box-shadow: 0 0 15px rgba(248, 168, 0, 0.4); 
       }
+    }
+    
+    .loading-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    .loading-title {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #fff;
+      text-align: center;
+      line-height: 1.3;
+      margin-bottom: 15px;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      background: linear-gradient(135deg, #f9d423 0%, #f83600 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .loading-text {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.8);
+      text-align: center;
+      line-height: 1.4;
+      position: relative;
+      font-weight: 500;
+    }
+    
+    .loading-dots::after {
+      content: '.';
+      animation: dots 1.5s infinite;
     }
     
     @keyframes dots {
@@ -455,105 +354,95 @@
       60%, 100% { content: '...'; }
     }
     
-    @keyframes float {
-      0%, 100% { transform: translateY(-50%) translateX(0); }
-      50% { transform: translateY(-50%) translateX(5px); }
-    }
-    
-    /* Premium Crash Graphics */
     .crash-graphic {
       position: absolute;
       width: 100%;
       height: 100%;
       pointer-events: none;
       z-index: 0;
-      opacity: 0.15;
+      opacity: 0.1;
     }
     
     .crash-line {
       position: absolute;
-      height: 1px;
+      height: 2px;
       background: linear-gradient(90deg, transparent, #f83600, transparent);
       width: 100%;
-      animation: crashLineMove 12s linear infinite;
+      animation: crashLineMove 10s linear infinite;
     }
     
     @keyframes crashLineMove {
-      0% { top: 10%; opacity: 0; }
-      10% { opacity: 0.8; }
-      90% { opacity: 0.8; }
-      100% { top: 90%; opacity: 0; }
+      0% { top: 10%; }
+      50% { top: 90%; }
+      100% { top: 10%; }
     }
     
     .crash-dot {
       position: absolute;
-      width: 6px;
-      height: 6px;
+      width: 8px;
+      height: 8px;
       background: #f9d423;
       border-radius: 50%;
-      filter: drop-shadow(0 0 4px #f9d423);
-      animation: crashDotMove 18s linear infinite;
+      animation: crashDotMove 15s linear infinite;
     }
     
     @keyframes crashDotMove {
       0% { 
-        transform: translate(10%, 10%) scale(0.8);
-        opacity: 0;
-      }
-      10% { 
+        transform: translate(10%, 10%) scale(1);
         opacity: 0.8;
       }
-      90% { 
-        opacity: 0.8;
+      50% { 
+        transform: translate(90%, 90%) scale(1.5);
+        opacity: 0.3;
       }
       100% { 
-        transform: translate(90%, 90%) scale(1.2);
-        opacity: 0;
+        transform: translate(10%, 10%) scale(1);
+        opacity: 0.8;
       }
     }
-    
-    /* Premium Notification Popup */
+
+    /* Notification Popup Styles */
     .notification-overlay {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: rgba(0, 0, 0, 0.9);
+      background-color: rgba(0, 0, 0, 0.85);
       z-index: 1000;
       display: flex;
       justify-content: center;
       align-items: center;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      padding: 20px;
-      backdrop-filter: blur(5px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 15px;
     }
-    
+
     .notification-overlay.active {
       opacity: 1;
       visibility: visible;
     }
-    
+
     .notification-box {
-      background: linear-gradient(135deg, rgba(40,40,40,0.95) 0%, rgba(25,25,25,0.95) 100%);
-      border-radius: var(--border-radius);
-      padding: 25px;
+      background: linear-gradient(135deg, rgba(30,30,30,0.95) 0%, rgba(20,20,20,0.95) 100%);
+      border-radius: 16px;
+      padding: 22px;
       width: 100%;
       max-width: 340px;
-      box-shadow: 0 10px 40px rgba(248, 168, 0, 0.3);
-      transform: translateY(20px) scale(0.95);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 0 25px rgba(248, 168, 0, 0.4);
+      transform: scale(0.9);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
-      border: 1px solid rgba(248, 168, 0, 0.2);
+      border: 2px solid rgba(248, 168, 0, 0.4);
       overflow: hidden;
     }
-    
+
     .notification-overlay.active .notification-box {
-      transform: translateY(0) scale(1);
+      transform: scale(1);
     }
-    
+
+    /* Shine effect animation */
     .notification-box::before {
       content: '';
       position: absolute;
@@ -564,193 +453,145 @@
       background: linear-gradient(
         90deg,
         rgba(255, 255, 255, 0) 0%,
-        rgba(248, 168, 0, 0.15) 50%,
+        rgba(248, 168, 0, 0.2) 50%,
         rgba(255, 255, 255, 0) 100%
       );
-      animation: shine 6s infinite;
+      animation: shine 3s infinite;
       z-index: 1;
     }
-    
+
     .notification-close {
       position: absolute;
-      top: 15px;
-      right: 15px;
+      top: 12px;
+      right: 12px;
       background: rgba(248, 168, 0, 0.1);
-      border: 1px solid rgba(248, 168, 0, 0.3);
-      width: 30px;
-      height: 30px;
+      border: 2px solid rgba(248, 168, 0, 0.4);
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #f9d423;
-      font-size: 1rem;
+      font-size: 0.9rem;
       cursor: pointer;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: 2;
     }
-    
+
     .notification-close:hover {
       background: rgba(248, 168, 0, 0.2);
-      transform: rotate(90deg);
+      transform: rotate(90deg) scale(1.1);
     }
-    
+
     .notification-content {
       text-align: center;
       padding: 5px;
       font-size: 0.92rem;
       line-height: 1.6;
-      color: rgba(255, 255, 255, 0.9);
+      color: #f0f0f0;
       letter-spacing: 0.2px;
       position: relative;
       z-index: 1;
     }
-    
+
     .notification-content h3 {
       color: #f9d423;
       margin-bottom: 18px;
-      font-size: 1.2rem;
-      font-weight: 700;
+      font-size: 1.1rem;
+      font-weight: 600;
       position: relative;
     }
-    
+
     .notification-content h3::after {
       content: '';
       position: absolute;
       bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
+      left: 0;
+      width: 100%;
+      height: 2px;
       background: linear-gradient(90deg, #f9d423, #f83600);
-      border-radius: 3px;
+      border-radius: 2px;
     }
-    
+
     .notification-content p {
       margin-bottom: 16px;
     }
-    
+
     .team-signature {
-      color: #f9d423;
+      color: #f83600;
       margin-top: 18px;
       font-size: 0.9rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      font-weight: 600;
     }
     
-    /* Mobile Responsiveness */
     @media (max-width: 480px) {
       header {
-        font-size: 1.2rem;
-        padding: 1rem 1.2rem;
-        margin: 1rem 0 1.5rem;
-      }
-      
-      #liveTime {
-        font-size: 0.85rem;
-        padding: 0.7rem 1.2rem;
-        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+        padding: 0.8rem 1rem;
       }
       
       .signal-box {
-        max-width: 280px;
-      }
-      
-      .loading-title {
-        font-size: 1.2rem;
+        width: 260px;
+        height: 260px;
       }
       
       .odd-display {
         font-size: 1.2rem;
-        padding: 0.9rem 1.4rem;
-        min-height: 60px;
+        padding: 0.7rem 1.4rem;
       }
       
       .buttons a {
-        padding: 0.9rem 1.2rem;
-        font-size: 0.9rem;
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
       }
-      
+
       .notification-box {
-        padding: 20px;
+        padding: 18px;
       }
-      
+
       .notification-content {
         font-size: 0.85rem;
       }
-    }
-    
-    @media (max-width: 380px) {
-      header {
-        font-size: 1.1rem;
-      }
-      
-      .signal-time {
-        font-size: 1.1rem;
-      }
-      
-      .loading-title {
-        font-size: 1.1rem;
-      }
-      
-      .odd-display {
-        font-size: 1.1rem;
-      }
-    }
-    
-    /* Disable bounce effect on mobile */
-    html, body {
-      overscroll-behavior: none;
-      height: 100%;
-      overflow: auto;
     }
   </style>
 </head>
 <body oncontextmenu="return false">
   <div class="content">
-    <div class="premium-badge">Premium</div>
-    
     <div class="crash-graphic">
-      <div class="crash-line" style="top: 15%; animation-delay: 0s;"></div>
-      <div class="crash-line" style="top: 35%; animation-delay: -3s;"></div>
-      <div class="crash-line" style="top: 65%; animation-delay: -6s;"></div>
-      <div class="crash-dot" style="left: 15%; animation-delay: -1s;"></div>
-      <div class="crash-dot" style="left: 45%; animation-delay: -4s;"></div>
-      <div class="crash-dot" style="left: 75%; animation-delay: -7s;"></div>
+      <div class="crash-line" style="top: 20%;"></div>
+      <div class="crash-line" style="top: 40%; animation-delay: -2s;"></div>
+      <div class="crash-line" style="top: 60%; animation-delay: -5s;"></div>
+      <div class="crash-dot" style="left: 20%; animation-delay: -1s;"></div>
+      <div class="crash-dot" style="left: 50%; animation-delay: -3s;"></div>
+      <div class="crash-dot" style="left: 80%; animation-delay: -7s;"></div>
     </div>
     
-    <header>XTREME CRASH PREDICTOR</header>
-    <div id="liveTime">Live: <span id="time">--:--:--</span> | Date: <span id="date">--/--/----</span></div>
+    <header>XTREME CRASH PREDICTOR : MELBET</header>
+    <div id="liveTime">Live time: <span id="time">--:--:--</span> | Date: <span id="date">----</span></div>
     
-    <div class="signal-container">
-      <div class="signal-box loading" id="signalBox">
-        <div class="signal-content" id="signalContent">
-          <div class="loading-container">
-            <div class="loading-title">PREDICTING NEXT CRASH</div>
-            <div class="loading-text">Analyzing game patterns<span class="loading-dots"></span></div>
-          </div>
+    <div class="signal-box loading" id="signalBox">
+      <div class="signal-content" id="signalContent">
+        <div class="loading-container">
+          <div class="loading-title">PREDICTING<br>NEXT CRASH</div>
+          <div class="loading-text">Calculating optimal odds...<span class="loading-dots"></span></div>
         </div>
       </div>
     </div>
     
-    <div class="odd-display" id="oddText">Initializing prediction system...</div>
+    <div class="odd-display" id="oddText" style="color: white;">Initializing prediction system...</div>
     
     <div class="buttons-container">
       <div class="buttons">
-        <a href="https://chat.whatsapp.com/Jiyuy808D5Q2a8P7IEW72g" class="whatsapp">
-          <i class="fab fa-whatsapp"></i> WhatsApp Group
-        </a>
-        <a href="https://t.me/xtremepredictor" class="telegram">
-          <i class="fab fa-telegram"></i> Telegram Channel
-        </a>
+        <a href="https://chat.whatsapp.com/Jiyuy808D5Q2a8P7IEW72g" class="whatsapp">Join WhatsApp Group</a>
+        <a href="https://t.me/xtremepredictor" class="telegram">Join Telegram Channel</a>
       </div>
     </div>
     
     <footer>POWERED BY XTREME PREDICTOR</footer>
   </div>
 
-  <!-- Premium Notification Popup -->
+  <!-- Notification Popup -->
   <div class="notification-overlay" id="notificationOverlay">
     <div class="notification-box">
       <button class="notification-close" id="notificationClose">
@@ -917,7 +758,7 @@
       signalBox.className = 'signal-box loading';
       signalContent.innerHTML = `
         <div class="loading-container">
-          <div class="loading-title">PREDICTING NEXT CRASH</div>
+          <div class="loading-title">PREDICTING<br>NEXT CRASH</div>
           <div class="loading-text">Analyzing game patterns<span class="loading-dots"></span></div>
         </div>
       `;
@@ -944,8 +785,8 @@
       if (currentTimeline.length === 0) {
         signalContent.innerHTML = `
           <div class="loading-container">
-            <div class="loading-title">NO CRASHES PREDICTED</div>
-            <div class="loading-text">Please check back later</div>
+            <div class="loading-title">NO CRASHES<br>PREDICTED</div>
+            <div class="loading-text">Please check back<br>later</div>
           </div>
         `;
         oddEl.innerHTML = 'System idle';
@@ -1013,7 +854,7 @@
     // Show notification after 5 seconds with animation
     setTimeout(function() {
       const overlay = document.getElementById('notificationOverlay');
-      overlay.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+      overlay.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
       overlay.classList.add('active');
     }, 10000);
 
@@ -1022,14 +863,14 @@
       const btn = this;
       const overlay = document.getElementById('notificationOverlay');
       
-      btn.style.transform = 'rotate(90deg)';
+      btn.style.transform = 'rotate(90deg) scale(1.1)';
       btn.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
       
       overlay.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
       overlay.classList.remove('active');
       
       setTimeout(() => {
-        btn.style.transform = 'rotate(0)';
+        btn.style.transform = 'rotate(0) scale(1)';
       }, 300);
     });
 
